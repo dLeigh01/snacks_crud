@@ -2,12 +2,14 @@
 
 {% block content %}
 
-<h1>Delete Snack</h1>
+<h1 class="text-slate-300 text-4xl mb-5">Delete Snack</h1>
 
-<form method="POST">
+<form method="POST" class="text-lg mb-5 text-slate-300">
     {% csrf_token %}
-    <p>Are you sure you want to delete "{{ snack.title }}"?</p>
-    <input type="submit" value="OK">
+    <p>Are you sure you want to delete "<span class="text-emerald-600">{{ snack.title }}</span>"?</p>
+    <input type="submit" value="DELETE" class="bg-red-800 text-slate-100 p-2 ml-2 mt-3 rounded-lg drop-shadow-lg text-base hover:bg-red-600">
 </form>
+
+<a href="{% url 'snack_list' %}" class="bg-green-800 text-slate-100 p-2 rounded-lg drop-shadow-lg ml-2 text-lg hover:bg-green-600">Return</a>
 
 {% endblock content %}

@@ -2,11 +2,11 @@
 
 {% block content %}
 
-<a href="{% url 'snack_create' %}">+ Add Snack</a>
-<ul>
+<a href="{% url 'snack_create' %}" class="bg-blue-800 text-slate-100 p-2 rounded-lg drop-shadow-lg ml-3 hover:bg-blue-600">+ Add Snack</a>
+<ul class="mt-5 ml-3 mr-3 p-3 bg-gray-300 outline">
     {% for snack in object_list %}
-        <li>
-            <a href="{% url 'snack_detail' snack.pk %}">{{ snack.title }}</a>
+        <li class="m-5">
+            <a href="{% url 'snack_detail' snack.pk %}" class="text-3xl hover:text-4xl hover:text-blue-800">{{ snack.title }}</a>
         </li>
     {% endfor %}
 </ul>
